@@ -23,9 +23,3 @@ exports.handler = async event => {
 
     return Responses._200(user);
 }
-
-const data = {
-    1234: {name: 'Klinsmann lopes', socialName: 'Lopes', age: 25, email: 'lopesklismann@gmail.com', password: "1235" , job: 'teacher', sector: 'Financeiro',
-    state: 'CE', city: 'Fortaleza', address: 'Rua da missao', numberPhone: '85 - 999562001'
-    }
-}
