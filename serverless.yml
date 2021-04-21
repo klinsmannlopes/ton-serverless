@@ -2,49 +2,33 @@ service: ton-user
 frameworkVersion: '2'
 
 custom:
-  settings:
-    USERS_TABLE: users
+    tableName: users-tables
 
 provider:
   name: aws
   runtime: nodejs10.x
   region: us-east-2
-  environment: ${self:custom.settings}
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - dynamoDB:DescribeTable
-        - dynamoDB:Scan
-        - dynamoDB:GetItem
-        - dynamoDB:PutItem
-        - dynamoDB:UpdateItem
-        - dynamoDB:DeleteItem
-      Resource:
-        - "arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.settings.USERS_TABLE}"
-
-
-  lambdaHashingVersion: 20201221
 
 functions:
-  createUser:
-    handler: handler.hello
+  user:
+    handler: lambdas/user.handler
     events:
-    - http:
-      path: /user
-      method: post
+      - http:
+          path: user/{ID}
+          method: GET
+          cors: true
 
-resource:
-  Resource:
+resources:
+  Resources:
     UsersTable:
-    Type: AWS::DynamoDB::Table
-    Properties:
-      AttributeDefinitions:
-      - AttributeName: "id"
-      - AttributeType: "S"
-      KeySchema:
-      - AttributeName: "id"
-        KeyType: "HASH"
-      ProvisionedThroughput:
-        ReadCapacityUnits: 1
-        WriteCapacityUnits: 1 
-      TableName: ${self.custom.settings.USERS_TABLE}
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.tableName}
+        AttributeDefinitions:
+          - AttributeName: ID
+            AttributeType: S
+        KeySchema:
+            - AttributeName: ID
+              KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+              
