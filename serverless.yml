@@ -24,6 +24,13 @@ functions:
           path: user/{ID}
           method: GET
           cors: true
+  accessCounter:
+    handler: lambdas/endpoints/accessCounter.handler
+    events:
+      - http:
+          path: counter
+          method: PUT
+          cors: true
 
 resources:
   Resources:
