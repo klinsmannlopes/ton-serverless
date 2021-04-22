@@ -14,6 +14,16 @@ provider:
       Action:
         - dynamodb:*
       Resource: '*'
+  apiKeys:
+    - devTonApiKey
+    - prodTonApiKey
+  usagePlan:
+      quota:
+        limit: 1000
+        period: MONTH
+      throttle:
+        burstLimit: 10
+        rateLimit: 20
 
 functions:
   user:
@@ -23,6 +33,7 @@ functions:
           path: user/{ID}
           method: GET
           cors: true
+          private: true
   createUser:
     handler: lambdas/endpoints/createUser.handler
     events:
@@ -30,10 +41,12 @@ functions:
           path: user
           method: POST
           cors: true
+          private: true
   counter:
     handler: lambdas/endpoints/counter.handler
     events:
       - http:
+          private: true
           path: visits/{proxy+}
           method: ANY
           integration: http-proxy
