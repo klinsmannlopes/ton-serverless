@@ -16,11 +16,11 @@ exports.handler = async event => {
 
     
     const user = await Dynamo.get(ID, tableName).catch(err => {
-        console.log("Erro em pegar user na base de dados", err);
+        console.log("Erro ao pegar usuário na base de dados", err);
     });
 
     if(!user) {
-        return Responses._400({message: 'Usuario nao esta na base'});
+        return Responses._400({message: 'Usuário nao esta na base'});
     }
 
     return Responses._200(user);
