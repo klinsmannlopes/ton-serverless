@@ -1,7 +1,7 @@
 # ton-serverless
 Centralização de lambdas para ser usadas no projeto.
 
-OBS: Se quiser apenas consultar os endpoints, pular para seção #Endpoints#, os mesmos já se encotram na AWS e já podem ser usados.
+OBS: Se quiser apenas consultar os endpoints, pular para seção #Endpoints#, os mesmos já se encontram na AWS e já podem ser usados.
 
 ## Requerimento
 
@@ -115,7 +115,7 @@ Com isso veriquique os endpoints na sua AWS e suas funções lambdas na AWS
 
     
     - Endpoints já configurados
-        - Para facilitar os teste, já iniciei um contador
+        - Para facilitar os testes, já iniciei um contador
             - Buscar contador
                 - GET
                 - [https://ilejvt44e0.execute-api.us-east-2.amazonaws.com/dev/visits/get/ton.com/visits](https://ilejvt44e0.execute-api.us-east-2.amazonaws.com/dev/visits/get/ton.com/visits)
