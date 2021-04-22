@@ -1,2 +1,2 @@
 # ton-serverless
-Centralização de lambdas para ser usadas no projeto
+Centralização de lambdas para ser usadas no projeto.
