@@ -3,6 +3,8 @@ Centralização de lambdas para ser usadas no projeto.
 
 OBS: Se quiser apenas consultar os endpoints, pular para seção #Endpoints#, os mesmos já se encontram na AWS e já podem ser usados.
 
+<br />
+
 ## Requerimento
 
 [NodeJS](https://nodejs.org/en/download/)
@@ -12,6 +14,8 @@ OBS: Se quiser apenas consultar os endpoints, pular para seção #Endpoints#, os
 [SERVERLESS](https://www.serverless.com/framework/docs/getting-started/)
 
 [Turotial do zero para instalar NPM e NODEJS](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04-pt)
+
+<br /><br />
 
 ## Como usar em sua própria conta AWS
 
@@ -37,8 +41,11 @@ Em sua conta AWS crie uma IAM pra você.
 
 Após isso pegar as credenciais na tela abaixo que aparece abaixo.
 
+<br />
 
 ![Alt Text](https://media.giphy.com/media/WtCPfAP96oVlLmWwJI/giphy.gif)
+
+<br />
 
 Com esses dados, executar o comando abaixo passando esse dados:
 
@@ -55,8 +62,27 @@ $ serverless deploy
 
 Com isso veriquique os endpoints na sua AWS e suas funções lambdas na AWS
 
+<br /><br />
 
 # Endpoints
+
+### Para utilizar os endpoint você precisa usar um client, exemplos abaixo:
+
+<br />
+
+[POSTMAN](https://www.postman.com)
+
+[SOAPUI](https://www.soapui.org)
+
+<br />
+
+- Como forma de segurança, e preciso passar o X-API-KEY na requisição do endpoint, no exemplo abaixo utilizo o client postman:
+    <br /><br />
+    ![Alt Text](https://media.giphy.com/media/oM8di7SnAI0FL2fmKP/giphy.gif)
+    <br /><br />
+
+    - Foi criada uma API KEY para teste, pode utilizar dela para reliazar os teste das requisições
+        - X-API-KEY -> 'gSYjyQeo2aa0hOxQTLNbd9P0xBlaXo5yH48wGl60'
 
 - Endpoint para pegar dados do usuário
     - GET
