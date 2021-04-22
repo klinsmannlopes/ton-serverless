@@ -16,7 +16,7 @@ exports.handler = async event => {
         !reqBody.job ||
         reqBody.email.trim() === ''
       ) {
-        return Responses._400({message: 'Esses dados são obrigatório'});
+        return Responses._400({message: 'Esses dados são obrigatórios'});
       }
 
     const user = {
