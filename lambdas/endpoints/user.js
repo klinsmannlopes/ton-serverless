@@ -1,3 +1,5 @@
+'use strict'
+
 const Responses = require('../common/response_API');
 const Dynamo = require('../common/Dynamo');
 

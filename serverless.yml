@@ -1,5 +1,4 @@
 service: ton-user
-frameworkVersion: '2'
 
 custom:
     tableName: users-table
@@ -24,13 +23,26 @@ functions:
           path: user/{ID}
           method: GET
           cors: true
-  accessCounter:
-    handler: lambdas/endpoints/accessCounter.handler
+  createUser:
+    handler: lambdas/endpoints/createUser.handler
     events:
       - http:
-          path: counter
-          method: PUT
+          path: user
+          method: POST
           cors: true
+  counter:
+    handler: lambdas/endpoints/counter.handler
+    events:
+      - http:
+          path: visits/{proxy+}
+          method: ANY
+          integration: http-proxy
+          request:
+            uri: https://api.countapi.xyz/{proxy}
+            parameters:
+              paths:
+                proxy: true
+  
 
 resources:
   Resources:
