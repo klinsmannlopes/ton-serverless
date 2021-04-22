@@ -81,7 +81,7 @@ Com isso veriquique os endpoints na sua AWS e suas funções lambdas na AWS
     ![Alt Text](https://media.giphy.com/media/oM8di7SnAI0FL2fmKP/giphy.gif)
     <br /><br />
 
-    - Foi criada uma API KEY para teste, pode utilizar dela para reliazar os teste das requisições
+    - Foi criada uma API KEY para testes, pode utilizar dela para realizar os testes das requisições
         - X-API-KEY -> 'gSYjyQeo2aa0hOxQTLNbd9P0xBlaXo5yH48wGl60'
 
 - Endpoint para pegar dados do usuário
