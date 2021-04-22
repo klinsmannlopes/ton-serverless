@@ -1,0 +1,60 @@
+service: ton-user
+
+custom:
+    tableName: users-table
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: us-east-2
+  environment:
+    tableName: ${self:custom.tableName}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: '*'
+
+functions:
+  user:
+    handler: lambdas/endpoints/user.handler
+    events:
+      - http:
+          path: user/{ID}
+          method: GET
+          cors: true
+  createUser:
+    handler: lambdas/endpoints/createUser.handler
+    events:
+      - http:
+          path: user
+          method: POST
+          cors: true
+  counter:
+    handler: lambdas/endpoints/counter.handler
+    events:
+      - http:
+          path: visits/{proxy+}
+          method: ANY
+          integration: http-proxy
+          request:
+            uri: https://api.countapi.xyz/{proxy}
+            parameters:
+              paths:
+                proxy: true
+  
+
+resources:
+  Resources:
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.tableName}
+        AttributeDefinitions:
+          - AttributeName: ID
+            AttributeType: S
+        KeySchema:
+            - AttributeName: ID
+              KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+              
