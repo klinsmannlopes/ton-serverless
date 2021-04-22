@@ -132,12 +132,15 @@ Com isso veriquique os endpoints na sua AWS e suas funções lambdas na AWS
 - Endpoint para consultar e realizar contagem de acessos
     - GET (todos utilizam o get)
         - Podemos utilizar esse endpoint para relizar essa funções em outras partes do site, apenas mudando os dados de input do enpoint
-        - [https://ilejvt44e0.execute-api.us-east-2.amazonaws.com/dev/visits/get/{namespace}/{key}](https://ilejvt44e0.execute-api.us-east-2.amazonaws.com/dev/visits/get/ton.com/visits)
-        
-            - namespace:
-                - Esse dado deve ser exclusivo, é recomendável usar o domínio do seu site
-            - Key
-                - Esse dado junto com o namespace, identifica qual contador buscar e qual realizar o increment da contagem.
+        - [https://ilejvt44e0.execute-api.us-east-2.amazonaws.com/dev/visits/{action}/{namespace}/{key}](https://ilejvt44e0.execute-api.us-east-2.amazonaws.com/dev/visits/get/ton.com/visits)
+            - obrigatorios
+                - action
+                    - Esse dado e para saber qual ação realizar
+                        - 'get' para pegar o contador e 'hit' para incrementar o contador
+                - namespace
+                    - Esse dado deve ser exclusivo, é recomendável usar o domínio do seu site
+                - Key
+                    - Esse dado junto com o namespace, identifica qual contador buscar e qual realizar o increment da contagem.
 
     
     - Endpoints já configurados
