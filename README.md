@@ -123,3 +123,9 @@ Com isso veriquique os endpoints na sua AWS e suas funções lambdas na AWS
             - Realizar contagem
                 - GET
                 - [https://ilejvt44e0.execute-api.us-east-2.amazonaws.com/dev/visits/hit/ton.com/visits](https://ilejvt44e0.execute-api.us-east-2.amazonaws.com/dev/visits/hit/ton.com/visits)
+
+
+## Após toda essa configuração e só partir pro abraço e aproveitar sua API, até a próxima.
+
+
+![Alt Text](https://media.giphy.com/media/eEXxfHQJ0dWOrctI55/giphy.gif)
