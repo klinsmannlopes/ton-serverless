@@ -51,7 +51,7 @@ Com esses dados, executar o comando abaixo passando esse dados:
 
 
 ```
-$ serverless config credentials --provider aws --key=ID_DE_CHAVE_DE ACESSO --secret CHAVE_DE_ACESSO_SECRETA
+$ serverless config credentials --provider aws --key=ID_DE_CHAVE_DE_ACESSO --secret CHAVE_DE_ACESSO_SECRETA
 ```
 
 Após configurar credencias na maquina, executar o comando abaixo:
