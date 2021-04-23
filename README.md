@@ -39,7 +39,7 @@ $ npm install
 Em sua conta AWS crie uma IAM pra você.
  [TUTORIAL](https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/id_users_create.html)
 
-Após isso pegar as credenciais na tela abaixo que aparece abaixo.
+Após isso pegar as credenciais que aparecem na tela abaixo:
 
 <br />
 
@@ -54,13 +54,13 @@ Com esses dados, executar o comando abaixo passando esse dados:
 $ serverless config credentials --provider aws --key=ID_DE_CHAVE_DE ACESSO --secret CHAVE_DE_ACESSO_SECRETA
 ```
 
-Após configurar credencias na maquina executar o comando abaixo
+Após configurar credencias na maquina, executar o comando abaixo:
 
 ```
 $ serverless deploy
 ```
 
-Com isso veriquique os endpoints na sua AWS e suas funções lambdas na AWS
+Com isso verifique os endpoints no seu API Gateway e suas funções lambdas (Tudo na AWS):
 
 <br /><br />
 
@@ -131,9 +131,9 @@ Com isso veriquique os endpoints na sua AWS e suas funções lambdas na AWS
 
 - Endpoint para consultar e realizar contagem de acessos
     - GET (todos utilizam o get)
-        - Podemos utilizar esse endpoint para relizar essa funções em outras partes do site, apenas mudando os dados de input do enpoint
+        - Podemos utilizar esse endpoint para realizar essa funções em outras partes do site, apenas mudando os dados de input do endpoint
         - [https://ilejvt44e0.execute-api.us-east-2.amazonaws.com/dev/visits/{action}/{namespace}/{key}](https://ilejvt44e0.execute-api.us-east-2.amazonaws.com/dev/visits/get/ton.com/visits)
-            - obrigatorios
+            - Obrigatórios
                 - action
                     - Esse dado e para saber qual ação realizar
                         - 'get' para pegar o contador e 'hit' para incrementar o contador
